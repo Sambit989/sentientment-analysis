@@ -1,5 +1,11 @@
-pandas==2.2.2
-numpy==1.26.4
+pandas==2.3.3
+numpy==2.3.4
+streamlit
+nltk
+plotly
+scikit-learn
+matplotlib
+seaborn
 meson==1.2.3
 meson-python==0.15.0
 Cython==3.0.10

@@ -225,7 +225,7 @@ with col1:
         default_text = ""
     
     user_input = st.text_area(
-        "",
+        "Enter your text here:",
         value=default_text,
         height=200,
         placeholder="Type or paste your review, comment, or any text here...",
