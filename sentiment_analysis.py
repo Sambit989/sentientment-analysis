@@ -1,21 +1,4 @@
-"""
-IMPROVED SENTIMENT ANALYSIS MODEL - WITH NEGATION HANDLING
-Author: Your Name
-Description: Enhanced NLP sentiment classifier with better negation handling
 
-IMPROVEMENTS:
-1. Preserves negation words (not, never, no, etc.)
-2. Creates negation features (not_happy, not_good)
-3. Uses bigrams to capture context
-4. Better preprocessing pipeline
-5. Handles edge cases like "not bad", "not happy"
-
-INSTALLATION:
-pip install pandas numpy scikit-learn nltk matplotlib seaborn
-
-USAGE:
-python sentiment_analysis.py
-"""
 
 import pandas as pd
 import numpy as np

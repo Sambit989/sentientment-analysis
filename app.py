@@ -1,13 +1,3 @@
-"""
-SENTIMENT ANALYSIS WEB APP
-A user-friendly interface for sentiment prediction
-
-INSTALLATION:
-pip install streamlit
-
-RUN:
-streamlit run app.py
-"""
 
 import streamlit as st
 import pickle
@@ -235,10 +225,10 @@ with col1:
     col_btn1, col_btn2, col_btn3 = st.columns([1, 1, 2])
     
     with col_btn1:
-        analyze_button = st.button("🔍 Analyze Sentiment", type="primary", use_container_width=True)
-    
+        analyze_button = st.button("🔍 Analyze Sentiment", type="primary", width='stretch')
+
     with col_btn2:
-        clear_button = st.button("🗑️ Clear", use_container_width=True)
+        clear_button = st.button("🗑️ Clear", width='stretch')
 
 with col2:
     st.markdown("#### Quick Stats")
@@ -332,7 +322,7 @@ if analyze_button and user_input.strip():
                     }
                 ))
                 fig.update_layout(height=200, margin=dict(l=10, r=10, t=10, b=10))
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width='stretch')
         
         # Detailed analysis
         st.markdown("---")
@@ -342,11 +332,11 @@ if analyze_button and user_input.strip():
         
         with detail_col1:
             st.markdown("**Original Text:**")
-            st.text_area("", value=user_input, height=150, disabled=True, key="original")
-        
+            st.text_area("Original Text", value=user_input, height=150, disabled=True, key="original")
+
         with detail_col2:
             st.markdown("**Preprocessed Text:**")
-            st.text_area("", value=cleaned_text, height=150, disabled=True, key="cleaned")
+            st.text_area("Preprocessed Text", value=cleaned_text, height=150, disabled=True, key="cleaned")
         
         # Additional insights
         st.markdown("---")
@@ -403,7 +393,7 @@ if uploaded_file is not None:
                     results_df = pd.DataFrame(results)
                     
                     st.markdown("### Results")
-                    st.dataframe(results_df, use_container_width=True)
+                    st.dataframe(results_df, width='stretch')
                     
                     # Summary
                     positive_count = sum(1 for r in results if r['sentiment'] == 'Positive')
