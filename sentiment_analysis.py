@@ -522,5 +522,16 @@ def main():
     print("   Try: 'not happy' → should predict NEGATIVE")
     print("   Try: 'not bad' → should predict POSITIVE")
 
+# if __name__ == "__main__":
+#     main()
 if __name__ == "__main__":
-    main()
+    import os
+    # Train model if not saved
+    if not os.path.exists(CONFIG['model_save_path']):
+        train_and_save_model()
+
+    model, vectorizer = load_model_and_vectorizer()
+    print("\n🚀 Starting Flask Sentiment API on port 5000...")
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
+
